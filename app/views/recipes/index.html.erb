@@ -1,2 +1,21 @@
-<h1>Recipes#index</h1>
+<h1>Recipes for <%= @search%></h1>
 <p>Find me in app/views/recipes/index.html.erb</p>
+<table>
+  <thead role="rowgroup">
+  <tr role="row">
+    <th role="columnheader">Photo</th>
+    <th role="columnheader">Title</th>
+    <th role="columnheader">Ingredients</th>
+  </tr>
+  </thead>
+  <tbody role="rowgroup">
+  <% @recipes.each do |recipe| %>
+    <tr role="row">
+      <% recipe = recipe.symbolize_keys %>
+      <td data-label="Photo" role="cell"><%= link_to image_tag(recipe[:thumbnail]), recipe[:href] %></td>
+      <td data-label="Title" role="cell"><%= link_to sanitize(recipe[:title]), recipe[:href] %></td>
+      <td data-label="Ingredients" role="cell"><%= recipe[:ingredients] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

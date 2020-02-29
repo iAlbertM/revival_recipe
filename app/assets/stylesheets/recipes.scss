@@ -95,8 +95,10 @@ table caption {
 
 tbody tr {
   background-color: #2a2a2a;
-  /*   border: 1px solid $gray; */
   padding: 10em;
+  border-bottom: 1px outset rgba(255,255,255,.1);
+  border-top: 1px inset rgba(0,0,0,.2);
+}
 
 }
 tbody tr:hover {
